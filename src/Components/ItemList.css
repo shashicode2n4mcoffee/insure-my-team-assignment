@@ -1,0 +1,11 @@
+.itemlist {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.wrap {
+  box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.5);
+  margin: 1rem 0;
+  padding: 1rem 2rem;
+}
