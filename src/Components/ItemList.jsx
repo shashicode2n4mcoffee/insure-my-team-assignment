@@ -11,7 +11,7 @@ const ItemList = ({ itemList }) => {
   };
 
   const handleNext = () => {
-    if (currentPage*4 < itemList.length) {
+    if (currentPage * 4 < itemList.length) {
       setCurrentPage((preState) => preState + 1);
     }
   };
@@ -26,16 +26,20 @@ const ItemList = ({ itemList }) => {
 
   return (
     <div className='itemlist'>
-      <div className='wrap'>
-        {itemList.map((item, index) => {
-          return (
-            index > (currentPage - 1) * 4 &&
-            index <= (currentPage - 1) * 4 + 4 && (
-              <Items key={item.id} singleItem={item} />
-            )
-          );
-        })}
-      </div>
+      {itemList.length ? (
+        <div className='wrap'>
+          {itemList.map((item, index) => {
+            return (
+              index > (currentPage - 1) * 4 &&
+              index <= (currentPage - 1) * 4 + 4 && (
+                <Items key={item.id} singleItem={item} />
+              )
+            );
+          })}
+        </div>
+      ) : (
+        ''
+      )}
       <Paginate
         itemList={itemList}
         handleCurrentPage={handleCurrentPage}

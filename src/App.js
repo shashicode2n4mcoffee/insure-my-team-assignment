@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import './App.css';
 import ItemList from './Components/ItemList';
-import Paginate from './Components/Paginate';
 import SearchBar from './Components/SearchBar';
 
 function App() {
@@ -33,15 +32,6 @@ function App() {
     });
     setFilter(filtered);
   }, [items, search]);
-
-  // useEffect(() => {
-  //   let arr = new Array(filter.length / 4);
-
-  //   for (let i = 1; i <= arr.length; i++) {
-  //     arr.push(i);
-  //   }
-  //   console.log('Array', arr);
-  // }, [filter]);
 
   return (
     <div className='App'>

@@ -32,13 +32,17 @@ const Paginate = ({
   }, [itemList]);
   return (
     <div className='paginate'>
-      <Pagination size="lg">
+      <Pagination size='lg'>
         <Pagination.Prev onClick={handlePrev} />
         {pages.map((page) => {
           return (
             currentPage > page - 4 &&
             currentPage < page + 4 && (
-              <Pagination.Item onClick={() => handleClick(page)} key={page}>
+              <Pagination.Item
+                onClick={() => handleClick(page)}
+                key={page}
+                active={currentPage === page}
+              >
                 {page}
               </Pagination.Item>
             )
